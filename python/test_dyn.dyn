@@ -1,0 +1,483 @@
+{
+  "Uuid": "737db097-d55a-4241-ab78-8daa931a6485",
+  "IsCustomNode": false,
+  "Description": null,
+  "Name": "test_dyn",
+  "ElementResolver": {
+    "ResolutionMap": {}
+  },
+  "Inputs": [],
+  "Outputs": [],
+  "Nodes": [
+    {
+      "ConcreteType": "PythonNodeModels.PythonNode, PythonNodeModels",
+      "NodeType": "PythonScriptNode",
+      "Code": "# Enable Python support and load DesignScript library\r\nimport clr, sys\r\nclr.AddReference('ProtoGeometry')\r\nfrom Autodesk.DesignScript.Geometry import *\r\n\r\n# The inputs to this node will be stored as a list in the IN variables.\r\ndataEnteringNode = IN\r\n\r\n# Place your code below this line\r\n\r\n# Assign your output to the OUT variable.\r\nOUT = '00000000000000000',sys.version",
+      "VariableInputPorts": true,
+      "Id": "3efcd16949b2476f95e860bccdb317c4",
+      "Inputs": [
+        {
+          "Id": "42ee022c788b4d6ab8b1da7cf5df62d7",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "5191610110eb4a34a5c17d6360ac2cc8",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs an embedded IronPython script."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "a8e1f29401574d71a62aa432a2d78a1d",
+      "Inputs": [
+        {
+          "Id": "d9192f309d474a7e9d69e8b5e27edb28",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "0bb2c0e4982643d88a6f1e519a9d797b",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "PythonNodeModels.PythonStringNode, PythonNodeModels",
+      "VariableInputPorts": true,
+      "NodeType": "ExtensionNode",
+      "Id": "5500224ae5194a138046aa8cb42bdf35",
+      "Inputs": [
+        {
+          "Id": "9672ad36c3bb40bd96778393051a7ad5",
+          "Name": "script",
+          "Description": "Python script to run.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "c830af7eba994cdabd9b0dacaf20512b",
+          "Name": "IN[0]",
+          "Description": "Input #0",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "d2eaea96469a438eb6cbdf531f4a65ca",
+          "Name": "IN[1]",
+          "Description": "Input #1",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        },
+        {
+          "Id": "7412a07cae094763bb06dbc8b702c488",
+          "Name": "IN[2]",
+          "Description": "Input #2",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "518e9a7c467841529b33a98ec9dbb0db",
+          "Name": "OUT",
+          "Description": "Result of the python script",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Runs a IronPython script from a string."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.Filename, CoreNodeModels",
+      "HintPath": "C:\\Users\\Damon\\Documents\\GitHub\\theliving.geo\\python\\test_dyn.py",
+      "InputValue": ".\\test_dyn.py",
+      "NodeType": "ExtensionNode",
+      "Id": "aebb722d81104ab5869eaefee8f59a81",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "b27d16394f034b9f9f3ab572b65c4cdb",
+          "Name": "",
+          "Description": "Filename",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Allows you to select a file on the system to get its filename"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "586b3fc5fdff42dd8674354882c414cb",
+      "Inputs": [
+        {
+          "Id": "0e822243929d4f049fe691f90a974ad7",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "eaa046ae865a4887a511189ec09255cf",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Watch, CoreNodeModels",
+      "NodeType": "ExtensionNode",
+      "Id": "fda489f2f9dd463ab806a6cb3345f3c3",
+      "Inputs": [
+        {
+          "Id": "216cec19d8204c90a3a323f92a87c6a8",
+          "Name": "",
+          "Description": "Node to evaluate.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "d054935982ea462baeaead0fa5a0851f",
+          "Name": "",
+          "Description": "Watch contents.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "Visualize the output of node."
+    },
+    {
+      "ConcreteType": "Dynamo.Graph.Nodes.ZeroTouch.DSFunction, DynamoCore",
+      "NodeType": "FunctionNode",
+      "FunctionSignature": "DSCore.IO.FileSystem.ReadText@var",
+      "Id": "17f011d99671466cb979ef6e6df50850",
+      "Inputs": [
+        {
+          "Id": "bd3c6bd1d99c403696f42499bdc660c0",
+          "Name": "file",
+          "Description": "var",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Outputs": [
+        {
+          "Id": "525903f547a14c68aa07a3977d513356",
+          "Name": "str",
+          "Description": "Contents of the text file.",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Auto",
+      "Description": "Reads a text file and returns the contents as a string.\n\nFileSystem.ReadText (file: var): string"
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 35.300000000000004,
+      "Id": "f23ba0db036541ac91fbbd1dcd66076d",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "00d60c198e4d4cc1826e7e58f2d38a35",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 35.3,
+      "Id": "dc8b918cfa2149e6a7154c2ff0643e94",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "61bcb03311f34478b58e8232e57492ee",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    },
+    {
+      "ConcreteType": "CoreNodeModels.Input.DoubleSlider, CoreNodeModels",
+      "NodeType": "NumberInputNode",
+      "NumberType": "Double",
+      "MaximumValue": 100.0,
+      "MinimumValue": 0.0,
+      "StepValue": 0.1,
+      "InputValue": 35.3,
+      "Id": "3f98eea7ba9f4227819730dda366368b",
+      "Inputs": [],
+      "Outputs": [
+        {
+          "Id": "94569b3501834480b2af6c205a2bdece",
+          "Name": "",
+          "Description": "Double",
+          "UsingDefaultValue": false,
+          "Level": 2,
+          "UseLevels": false,
+          "KeepListStructure": false
+        }
+      ],
+      "Replication": "Disabled",
+      "Description": "A slider that produces numeric values."
+    }
+  ],
+  "Connectors": [
+    {
+      "Start": "5191610110eb4a34a5c17d6360ac2cc8",
+      "End": "d9192f309d474a7e9d69e8b5e27edb28",
+      "Id": "eaa45eef824b42bc89d76bd5f7dbb41c"
+    },
+    {
+      "Start": "518e9a7c467841529b33a98ec9dbb0db",
+      "End": "216cec19d8204c90a3a323f92a87c6a8",
+      "Id": "fc7a65e64ccf4452abcb7e8c26b15824"
+    },
+    {
+      "Start": "b27d16394f034b9f9f3ab572b65c4cdb",
+      "End": "bd3c6bd1d99c403696f42499bdc660c0",
+      "Id": "2da8db03fdbb40de9c232b1e46a09ed4"
+    },
+    {
+      "Start": "525903f547a14c68aa07a3977d513356",
+      "End": "0e822243929d4f049fe691f90a974ad7",
+      "Id": "a2704c134ec84d61ba3e062412b48b2c"
+    },
+    {
+      "Start": "525903f547a14c68aa07a3977d513356",
+      "End": "9672ad36c3bb40bd96778393051a7ad5",
+      "Id": "a765d1699f134dc99e1a81b885de58e0"
+    },
+    {
+      "Start": "00d60c198e4d4cc1826e7e58f2d38a35",
+      "End": "c830af7eba994cdabd9b0dacaf20512b",
+      "Id": "a3d83939306245528978bb3f8372b2ce"
+    },
+    {
+      "Start": "61bcb03311f34478b58e8232e57492ee",
+      "End": "d2eaea96469a438eb6cbdf531f4a65ca",
+      "Id": "1a8783b6661e472bb845d5ead22566be"
+    },
+    {
+      "Start": "94569b3501834480b2af6c205a2bdece",
+      "End": "7412a07cae094763bb06dbc8b702c488",
+      "Id": "56dec1eb7673470b922fa147da93146e"
+    }
+  ],
+  "Dependencies": [],
+  "Bindings": [],
+  "View": {
+    "Dynamo": {
+      "ScaleFactor": 1.0,
+      "HasRunWithoutCrash": true,
+      "IsVisibleInDynamoLibrary": true,
+      "Version": "2.0.2.6660",
+      "RunType": "Manual",
+      "RunPeriod": "1000"
+    },
+    "Camera": {
+      "Name": "Background Preview",
+      "EyeX": -17.0,
+      "EyeY": 24.0,
+      "EyeZ": 50.0,
+      "LookX": 12.0,
+      "LookY": -13.0,
+      "LookZ": -58.0,
+      "UpX": 0.0,
+      "UpY": 1.0,
+      "UpZ": 0.0
+    },
+    "NodeViews": [
+      {
+        "Id": "3efcd16949b2476f95e860bccdb317c4",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 481.99999999999994,
+        "Y": 386.0
+      },
+      {
+        "Id": "a8e1f29401574d71a62aa432a2d78a1d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 815.33333333333326,
+        "Y": 366.00000000000006
+      },
+      {
+        "Id": "5500224ae5194a138046aa8cb42bdf35",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Python Script From String",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 1334.4306295892823,
+        "Y": 900.477626315591
+      },
+      {
+        "Id": "aebb722d81104ab5869eaefee8f59a81",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "File Path",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 59.079948331320224,
+        "Y": 773.43743713498566
+      },
+      {
+        "Id": "586b3fc5fdff42dd8674354882c414cb",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 338.64778238285595,
+        "Y": 982.55382687680424
+      },
+      {
+        "Id": "fda489f2f9dd463ab806a6cb3345f3c3",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Watch",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 1671.416457153817,
+        "Y": 923.59823865531678
+      },
+      {
+        "Id": "17f011d99671466cb979ef6e6df50850",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "FileSystem.ReadText",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 235.39237130720494,
+        "Y": 778.88813428967353
+      },
+      {
+        "Id": "f23ba0db036541ac91fbbd1dcd66076d",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Number Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 818.07449954679646,
+        "Y": 961.78242067721169
+      },
+      {
+        "Id": "dc8b918cfa2149e6a7154c2ff0643e94",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Number Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 818.53671271610028,
+        "Y": 1033.5412111965902
+      },
+      {
+        "Id": "3f98eea7ba9f4227819730dda366368b",
+        "IsSetAsInput": false,
+        "IsSetAsOutput": false,
+        "Name": "Number Slider",
+        "ShowGeometry": true,
+        "Excluded": false,
+        "X": 823.45326007580388,
+        "Y": 1115.633812277154
+      }
+    ],
+    "Annotations": [],
+    "X": -147.19930081376719,
+    "Y": -118.59206090930104,
+    "Zoom": 0.93743229668600137
+  }
+}
